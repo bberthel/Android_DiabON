@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_margin="0dp"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/connexion"
+            android:textSize="@dimen/big_text_size"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/user_email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_corner_background"
+            android:padding="10dp"
+            android:layout_marginTop="@dimen/edit_text_margin_top"
+            android:hint="Adresse e-mail" />
+
+
+        <EditText
+            android:id="@+id/user_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_corner_background"
+            android:padding="10dp"
+            android:layout_marginTop="@dimen/edit_text_margin_top"
+            android:hint="Mot de passe"/>
+
+        <Button
+            android:id="@+id/connect"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/blue"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:text="@string/connect"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/create_account"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_grey"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/create_account"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</FrameLayout>

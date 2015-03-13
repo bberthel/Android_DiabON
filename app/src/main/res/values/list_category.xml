@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_category">
+        <item>Pains, crackers, céréales, pâtisseries</item>
+        <item>Amidons et légumineuses</item>
+        <item>Légumes</item>
+        <item>Fruits et fruits secs</item>
+        <item>Produits laitiers</item>
+        <item>Plats cuisinés</item>
+        <item>Desserts</item>
+        <item>Produits sucrés, confiseries</item>
+        <item>Appéritifs</item>
+        <item>Boissons</item>
+        <item>Restauration rapide</item>
+        <item>Sauces, assaisonnements</item>
+    </string-array>
+</resources>

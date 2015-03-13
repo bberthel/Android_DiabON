@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">DiabON</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Paramètres</string>
+
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="image_content_description">DiabON</string>
+    <string name="create_account">Créer un compte</string>
+    <string name="connect">Se connecter</string>
+    <string name="connexion">CONNEXION</string>
+
+    <string name="title_activity_login_display">LoginDisplayActivity</string>
+    <string name="hint_mail">"Ici : L'adresse email de l'utilisateur"</string>
+    <string name="hint_pass">"Ici : Le mot de passe de l'utilisateur"</string>
+
+    <string name="email_or_password_empty">Veuillez remplir tous les champs.</string>
+    <string name="email_format_error">Veuillez renseigner une adresse mail valide.</string>
+
+    <!-- Menu -->
+    <string-array name="items">
+        <item>Carnet</item>
+        <item>Alimentation</item>
+        <item>Conseils</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <!-- Menu -->
+    <string name="title_activity_carnet">Carnet</string>
+    <string name="carnet_title">Mes relevés</string>
+
+    <!-- Alimentation -->
+    <string name="title_activity_alimentation">Alimentation</string>
+    <string name="alimentation_title">Catalogue</string>
+
+    <!-- Conseils -->
+    <string name="title_activity_conseils">Conseils</string>
+    <string name="conseils_title">Articles</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+
+</resources>
