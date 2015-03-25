@@ -51,7 +51,7 @@ public class AlimentationArrayAdapter extends BaseAdapter {
 
         // set data
         holder.txtName.setText(alimentationList.get(position).getName());
-        holder.glucide.setText(alimentationList.get(position).getGlucide()+"glucides /"+alimentationList.get(position).getWeight()+" grammes");
+        holder.glucide.setText(alimentationList.get(position).getGlucide()+" g pour "+alimentationList.get(position).getWeight()+" g");
 
         return convertView;
     }
