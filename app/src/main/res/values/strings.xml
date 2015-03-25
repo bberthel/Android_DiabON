@@ -20,16 +20,19 @@
 
     <!-- Menu -->
     <string-array name="items">
-        <item>Carnet</item>
         <item>Alimentation</item>
         <item>Conseils</item>
+        <item>Aide</item>
     </string-array>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
     <!-- Menu -->
-    <string name="title_activity_carnet">Carnet</string>
-    <string name="carnet_title">Mes relevés</string>
+    <string name="title_activity_help">Aide</string>
+
+    <!-- Category -->
+    <string name="title_activity_category">Catégories des aliments</string>
+    <string name="category_title">Catégories des aliments</string>
 
     <!-- Alimentation -->
     <string name="title_activity_alimentation">Alimentation</string>

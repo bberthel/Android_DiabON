@@ -74,16 +74,16 @@ public class NavigationDrawer extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
-                        Intent intent= new Intent(NavigationDrawer.this, CarnetActivity.class);
-                        startActivity(intent);
-                        break;
-                    case 1:
                         Intent intent2= new Intent(NavigationDrawer.this, AlimentationActivity.class);
                         startActivity(intent2);
                         break;
-                    case 2:
+                    case 1:
                         Intent intent3= new Intent(NavigationDrawer.this, ConseilsActivity.class);
                         startActivity(intent3);
+                        break;
+                    case 2:
+                        Intent intent4= new Intent(NavigationDrawer.this, HelpActivity.class);
+                        startActivity(intent4);
                         break;
                 }
             }

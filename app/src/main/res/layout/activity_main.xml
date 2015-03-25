@@ -12,64 +12,30 @@
         android:orientation="vertical"
         android:layout_margin="@dimen/activity_margin">
 
-        <ImageView
-            android:id="@+id/android_picture"
-            android:layout_width="fill_parent"
-            android:layout_height="125dp"
-            android:src="@drawable/ic_launcher"
-            android:contentDescription="@string/image_content_description" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginTop="@dimen/text_margin_top"
-            android:text="@string/connexion"
-            android:textSize="@dimen/big_text_size"
-            android:textColor="@color/dark_grey"/>
+            android:background="@color/green">
 
-        <EditText
-            android:id="@+id/user_email"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:layout_gravity="center"
-            android:background="@color/white"
-            android:padding="6dp"
-            android:layout_marginTop="@dimen/edit_text_margin_top"
-            android:hint="Adresse e-mail" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_launcher"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/background"
+                android:text="Informez vous sur des aliments, composez votre menu et aidez nous à remplir notre catalogue."/>
 
-        <EditText
-            android:id="@+id/user_password"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:inputType="textPassword"
-            android:background="@color/white"
-            android:padding="6dp"
-            android:layout_marginTop="@dimen/edit_text_margin_top"
-            android:hint="Mot de passe"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"/>
 
-        <Button
-            android:id="@+id/connect"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/blue"
-            android:layout_marginTop="@dimen/normal_padding"
-            android:text="@string/connect"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/create_account"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/light_grey"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/button_margin_vertical"
-            android:text="@string/create_account"
-            android:textColor="@color/white" />
+        </LinearLayout>
 
     </LinearLayout>
 

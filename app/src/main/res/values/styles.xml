@@ -1,43 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+    <style name="Theme.Diabon" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarItemBackground">@drawable/selectable_background_diabon</item>
+        <item name="popupMenuStyle">@style/PopupMenu.Diabon</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Diabon</item>
+        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Diabon</item>
+        <item name="actionDropDownStyle">@style/DropDownNav.Diabon</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Diabon</item>
+        <item name="actionModeBackground">@drawable/cab_background_top_diabon</item>
+        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_diabon</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Diabon</item>
+
+                <!-- Light.DarkActionBar specific -->
+        <item name="actionBarWidgetTheme">@style/Theme.Diabon.Widget</item>
+
     </style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    <style name="ActionBar.Solid.Diabon" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@drawable/ab_solid_diabon</item>
+        <item name="backgroundStacked">@drawable/ab_stacked_solid_diabon</item>
+        <item name="backgroundSplit">@drawable/ab_bottom_solid_diabon</item>
+        <item name="progressBarStyle">@style/ProgressBar.Diabon</item>
     </style>
 
-    <!-- ActionBar styles -->
-    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:background">#4371b1</item>
-        <item name="android:icon">@android:color/transparent</item>
-        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+    <style name="ActionBar.Transparent.Diabon" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="background">@drawable/ab_transparent_diabon</item>
+        <item name="progressBarStyle">@style/ProgressBar.Diabon</item>
+    </style>
+	
+    <style name="PopupMenu.Diabon" parent="@style/Widget.AppCompat.PopupMenu">	
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_diabon</item>	
+    </style>
+	
+    <style name="DropDownListView.Diabon" parent="@style/Widget.AppCompat.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_diabon</item>
     </style>
 
-    <!-- ActionBar title text -->
-    <style name="MyActionBarTitleText"
-        parent="AppBaseTheme">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">25dp</item>
+    <style name="ActionBarTabStyle.Diabon" parent="@style/Widget.AppCompat.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_diabon</item>
     </style>
-
-    <!-- ActionBar tabs text styles -->
-    <style name="MyActionBarTabText"
-        parent="AppBaseTheme">
-        <item name="android:textColor">#eee</item>
+	
+    <style name="DropDownNav.Diabon" parent="@style/Widget.AppCompat.Spinner.DropDown.ActionBar">
+        <item name="android:background">@drawable/spinner_background_ab_diabon</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_diabon</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_diabon</item>
     </style>
-
-
+    
+    <style name="ProgressBar.Diabon" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_diabon</item>
+    </style>
+    
+    <style name="ActionButton.CloseMode.Diabon" parent="@style/Widget.AppCompat.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_diabon</item>
+    </style>
+    
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Diabon.Widget" parent="@style/Theme.AppCompat">
+        <item name="popupMenuStyle">@style/PopupMenu.Diabon</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Diabon</item>
+    </style>
 
 </resources>

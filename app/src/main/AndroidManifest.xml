@@ -6,31 +6,51 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppBaseTheme" >
+        android:theme="@style/Theme.Diabon" >
+
         <activity
-            android:name=".SplashScreen"
+            android:name=".LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/app_name" />
+
+        <activity android:name=".NavigationDrawer" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />
-        <activity android:name=".NavigationDrawer" />
-        <activity
-            android:name=".CarnetActivity"
-            android:label="@string/title_activity_carnet" />
+
         <activity
             android:name=".AlimentationActivity"
             android:label="@string/title_activity_alimentation" />
+
         <activity
             android:name=".ConseilsActivity"
             android:label="@string/title_activity_conseils" />
+
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/title_activity_help" />
+
+        <activity
+            android:name=".CategoryActivity"
+            android:label="Catalogue" />
+
+        <activity
+            android:name=".CategoryDetailsActivity"
+            android:label="Catalogue"
+            android:icon="@drawable/ic_action_back"
+            android:parentActivityName=".CategoryActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CategoryActivity" />
+        </activity>
+
+
     </application>
 
 </manifest>

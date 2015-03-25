@@ -11,6 +11,6 @@ import retrofit.http.Path;
  */
 public interface AlimentationService {
 
-        @GET("/aperitifs/{id}")
-        void listAliments (@Path("id") String id, Callback < List < Alimentation >> cb);
+        @GET("/foods/9/")
+        void listAliments (@Path("id") String id, Callback < AlimentationResponse> cb);
 }
