@@ -25,6 +25,7 @@ import retrofit.client.Response;
 public class CategoryFragment extends ListFragment {
 
     private Context mContext;
+    private String id_cat;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class CategoryFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
         // get the application context
         mContext = (CategoryActivity)getActivity();
+        id_cat= getActivity().getIntent().getStringExtra("id");
     }
 
     @Override
@@ -48,7 +50,7 @@ public class CategoryFragment extends ListFragment {
     public void onStart (){
         super.onStart();
         AlimentationService service = AlimentationAPI.getInstance("florent", "florent");
-        service.listAliments("4", new Callback<List<Alimentation>>() {
+        service.listAliments(id_cat, new Callback<List<Alimentation>>() {
             @Override
             public void success(List<Alimentation> food, Response response) {
                 if (food != null) {

@@ -1,7 +1,9 @@
 package project.android.imac.diabon;
 
+import android.app.Fragment;
 import android.app.ListFragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -22,7 +24,8 @@ import retrofit.client.Response;
 /**
  * Created by Brice on 09/03/2015.
  */
-public class AlimentationFragment extends ListFragment {
+public class AlimentationFragment extends Fragment implements View.OnClickListener{
+
     private TextView title;
     private Alimentation mAlimentation;
     private ListView lv;
@@ -55,6 +58,13 @@ public class AlimentationFragment extends ListFragment {
         setHasOptionsMenu(true);
     }
 
+    @Override
+    public void onClick(View v){
+        String id = String.valueOf(v.getId()).substring(2, v.getId());
+        Intent intent = new Intent(mContext,CategoryActivity.class);
+        intent.putExtra("id",id);
+        startActivity(intent);
+    }
 
 
 
