@@ -1,24 +1,24 @@
-package project.android.imac.diabon.alimentation;
+package project.android.imac.diabon.conseils;
 
 import java.io.Serializable;
 
 /**
- * Created by Brice on 12/03/2015.
+ * Created by Brice on 25/03/2015.
  */
-public class Alimentation implements Serializable {
+public class Article implements Serializable {
     protected String id;
     protected String name;
 
-    public Alimentation(String id, String name) {
+    public Article(String id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Alimentation(int id, String name) {
+    public Article(int id, String name) {
         this(Integer.toString(id), name);
     }
 
-    public Alimentation(){
+    public Article(){
 
     }
 

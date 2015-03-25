@@ -27,9 +27,6 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
-    <!-- Menu -->
-    <string name="title_activity_help">Aide</string>
-
     <!-- Category -->
     <string name="title_activity_category">Catégories des aliments</string>
     <string name="category_title">Catégories des aliments</string>
@@ -40,7 +37,21 @@
 
     <!-- Conseils -->
     <string name="title_activity_conseils">Conseils</string>
-    <string name="conseils_title">Articles</string>
-    <string name="title_activity_splash_screen">SplashScreen</string>
+
+        <!-- Actus -->
+        <string name="title_activity_conseils_actus">Actus</string>
+
+        <!-- Sport -->
+        <string name="title_activity_conseils_sport">Sport</string>
+
+        <!-- Vie pratique -->
+        <string name="title_activity_conseils_vie_pratique">Vie pratique</string>
+
+        <!-- Alimentation -->
+        <string name="title_activity_conseils_alimentation">Alimentation</string>
+
+    <!-- Help -->
+    <string name="title_activity_help">Aide</string>
+    <string name="help_title">Comment ça marche ?</string>
 
 </resources>

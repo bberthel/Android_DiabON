@@ -10,16 +10,48 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:layout_margin="@dimen/activity_margin">
+        android:layout_margin="16dp"
+        android:weightSum="1">
 
-        <TextView
+        <ImageButton
+            android:id="@+id/goto_conseils_actus"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="@dimen/text_margin_top"
-            android:text="@string/conseils_title"
-            android:textSize="@dimen/big_text_size"
-            android:textColor="@color/dark_grey"/>
+            android:background="#e46c6c"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/conseils_actus"
+            />
+
+        <ImageButton
+            android:id="@+id/goto_conseils_sport"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#f9c935"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/conseils_sport"
+            />
+
+        <ImageButton
+            android:id="@+id/goto_conseils_vie_pratique"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#fbad35"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/conseils_vie_pratique"
+            />
+
+        <ImageButton
+            android:id="@+id/goto_conseils_alimentation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#8db126"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/conseils_alimentation"
+            />
 
     </LinearLayout>
 
