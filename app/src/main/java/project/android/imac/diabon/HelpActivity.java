@@ -16,7 +16,7 @@ public class HelpActivity extends NavigationDrawer {
 
         if ( savedInstanceState == null ) {
             //create main fragment : homepage of an event
-            Fragment fragment = new ConseilsFragment();
+            Fragment fragment = new HelpFragment();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.content_frame,fragment).commit();

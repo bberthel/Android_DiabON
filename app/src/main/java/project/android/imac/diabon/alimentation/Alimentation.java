@@ -6,11 +6,11 @@ import java.io.Serializable;
  * Created by Brice on 12/03/2015.
  */
 public class Alimentation implements Serializable {
+<<<<<<< HEAD
     private String id;
     private String name;
     private Integer weight;
     private Float glucide;
-
 
     public String getId() {
         return id;
@@ -43,4 +43,3 @@ public class Alimentation implements Serializable {
     public void setGlucide(Float glucide) {
         this.glucide = glucide;
     }
-}

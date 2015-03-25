@@ -35,6 +35,22 @@
             android:name=".ConseilsActivity"
             android:label="@string/title_activity_conseils" />
 
+            <activity
+                android:name=".conseils.ActusActivity"
+                android:label="@string/title_activity_conseils_actus" />
+
+            <activity
+                android:name=".conseils.SportActivity"
+                android:label="@string/title_activity_conseils_sport" />
+
+            <activity
+                android:name=".conseils.ViePratiqueActivity"
+                android:label="@string/title_activity_conseils_vie_pratique" />
+
+            <activity
+                android:name=".conseils.AlimentationConseilsActivity"
+                android:label="@string/title_activity_conseils_vie_pratique" />
+
         <activity
             android:name=".HelpActivity"
             android:label="@string/title_activity_help" />
