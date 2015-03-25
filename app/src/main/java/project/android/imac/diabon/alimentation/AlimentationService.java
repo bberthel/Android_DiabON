@@ -4,6 +4,7 @@ import java.util.List;
 
 import retrofit.Callback;
 import retrofit.http.GET;
+import retrofit.http.POST;
 import retrofit.http.Path;
 
 /**
@@ -11,6 +12,6 @@ import retrofit.http.Path;
  */
 public interface AlimentationService {
 
-        @GET("/foods/9/")
-        void listAliments (@Path("id") String id, Callback < AlimentationResponse> cb);
+        @GET("/foods/{id}")
+        public void listAliments (@Path("id") String id, Callback <List<Alimentation>> callback);
 }

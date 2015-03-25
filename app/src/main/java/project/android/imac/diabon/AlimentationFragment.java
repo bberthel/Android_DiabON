@@ -1,25 +1,19 @@
 package project.android.imac.diabon;
 
-import android.app.Activity;
 import android.app.ListFragment;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import project.android.imac.diabon.alimentation.Alimentation;
 import project.android.imac.diabon.alimentation.AlimentationAPI;
-import project.android.imac.diabon.alimentation.AlimentationResponse;
 import project.android.imac.diabon.alimentation.AlimentationService;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -54,6 +48,7 @@ public class AlimentationFragment extends ListFragment {
         title = (TextView) getView().findViewById(R.id.title);
 
         id_food = getActivity().getIntent().getStringExtra("category_id");
+        System.out.println(id_food);
     }
 
     @Override
@@ -65,12 +60,11 @@ public class AlimentationFragment extends ListFragment {
     @Override
     public void onStart (){
         super.onStart();
-        AlimentationService service = AlimentationAPI.getInstance();
-        service.listAliments(id_food, new Callback<AlimentationResponse>() {
+        AlimentationService service = AlimentationAPI.getInstance("florent","florent");
+        service.listAliments("4", new Callback <List<Alimentation>>() {
             @Override
-            public void success(AlimentationResponse food, Response response) {
-                if (food.getAlimentation() != null) {
-                    mAlimentation = food.getAlimentation();
+            public void success(List<Alimentation> food, Response response) {
+                if (food != null) {
                     updateView(food);
                 }
             }
@@ -81,57 +75,10 @@ public class AlimentationFragment extends ListFragment {
             }
         });
     }
-    /*
-    @Override
-    // call the EventActivity and pass the id
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        Alimentation selectedFood = (Alimentation)lv.getItemAtPosition(position);
-        Intent intent;
-        switch (selectedFood.getId()){
-            // module invitation/inscription
-            case 1:
-                intent= new Intent(mContext,GuestActivity.class);
-                intent.putExtra("module_id",String.valueOf(selectedModule.getId()));
-                startActivity(intent);
-                break;
-            // module budget
-            case 2:
-                intent= new Intent(mContext,BudgetActivity.class);
-                intent.putExtra("module_id",String.valueOf(selectedModule.getId()));
-                startActivity(intent);
-                break;
-            // module Lieu
-            case 3:
-                intent= new Intent(mContext,PlaceActivity.class);
-                intent.putExtra("module_id",String.valueOf(selectedModule.getId()));
-                startActivity(intent);
-                break;
-            // module Transport
-            case 4:
-                Toast.makeText(mContext, "Module Transport à venir", Toast.LENGTH_SHORT).show();
-                break;
-            // module liste de tâches
-            case 5:
-                intent= new Intent(mContext,TodoActivity.class);
-                intent.putExtra("module_id",String.valueOf(selectedModule.getId()));
-                startActivity(intent);
-                break;
-            // ajouter un module
-            case 6:
-                intent= new Intent(mContext,AddModule.class);
-                intent.putExtra("event",mEvent);
-                startActivity(intent);
-                break;
-
-        }
-    }
-    */
 
     // update the event
-    private void updateView (AlimentationResponse food){
-        title.setText(food.getAlimentation().getName());
-
-        //lv.setAdapter(new AlimentationArrayAdapter(mContext, food.getAlimentation().getName()));
+    private void updateView (List<Alimentation> food){
+        setListAdapter(new AlimentationArrayAdapter(mContext, food));
     }
 
 
