@@ -31,7 +31,7 @@ public class AlimentationFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.alimentation, container, false);
+        return inflater.inflate(R.layout.alimentation_fragment, container, false);
 
     }
 
@@ -40,12 +40,6 @@ public class AlimentationFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
         // get the application context
         mContext = (AlimentationActivity)getActivity();
-
-        LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View header = inflater.inflate(R.layout.alimentation_header, null, false);
-        lv = (ListView) getView().findViewById(android.R.id.list);
-        lv.addHeaderView(header);
-        title = (TextView) getView().findViewById(R.id.title);
 
         id_food = getActivity().getIntent().getStringExtra("category_id");
         System.out.println(id_food);
@@ -57,29 +51,7 @@ public class AlimentationFragment extends ListFragment {
         setHasOptionsMenu(true);
     }
 
-    @Override
-    public void onStart (){
-        super.onStart();
-        AlimentationService service = AlimentationAPI.getInstance("florent","florent");
-        service.listAliments("4", new Callback <List<Alimentation>>() {
-            @Override
-            public void success(List<Alimentation> food, Response response) {
-                if (food != null) {
-                    updateView(food);
-                }
-            }
 
-            @Override
-            public void failure(RetrofitError error) {
-                error.printStackTrace();
-            }
-        });
-    }
-
-    // update the event
-    private void updateView (List<Alimentation> food){
-        setListAdapter(new AlimentationArrayAdapter(mContext, food));
-    }
 
 
 }
