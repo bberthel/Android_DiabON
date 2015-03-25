@@ -1,17 +1,28 @@
 package project.android.imac.diabon;
 
 import android.app.Fragment;
+import android.app.ListFragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.List;
+
+import project.android.imac.diabon.alimentation.Alimentation;
+import project.android.imac.diabon.alimentation.AlimentationAPI;
+import project.android.imac.diabon.alimentation.AlimentationService;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 /**
  * Created by Brice on 13/03/2015.
  */
-public class CategoryFragment extends Fragment {
+public class CategoryFragment extends ListFragment {
 
     private Context mContext;
 
@@ -25,6 +36,36 @@ public class CategoryFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         // get the application context
         mContext = (CategoryActivity)getActivity();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onStart (){
+        super.onStart();
+        AlimentationService service = AlimentationAPI.getInstance("florent", "florent");
+        service.listAliments("4", new Callback<List<Alimentation>>() {
+            @Override
+            public void success(List<Alimentation> food, Response response) {
+                if (food != null) {
+                    updateView(food);
+                }
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                error.printStackTrace();
+            }
+        });
+    }
+
+    // update the event
+    private void updateView (List<Alimentation> food){
+        setListAdapter(new AlimentationArrayAdapter(mContext, food));
     }
 
 }

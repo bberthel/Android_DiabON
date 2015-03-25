@@ -31,7 +31,7 @@ public class AlimentationFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.alimentation, container, false);
+        return inflater.inflate(R.layout.alimentation_fragment, container, false);
 
     }
 
@@ -55,29 +55,7 @@ public class AlimentationFragment extends ListFragment {
         setHasOptionsMenu(true);
     }
 
-    @Override
-    public void onStart (){
-        super.onStart();
-        AlimentationService service = AlimentationAPI.getInstance("florent","florent");
-        service.listAliments("4", new Callback <List<Alimentation>>() {
-            @Override
-            public void success(List<Alimentation> food, Response response) {
-                if (food != null) {
-                    updateView(food);
-                }
-            }
 
-            @Override
-            public void failure(RetrofitError error) {
-                error.printStackTrace();
-            }
-        });
-    }
-
-    // update the event
-    private void updateView (List<Alimentation> food){
-        setListAdapter(new AlimentationArrayAdapter(mContext, food));
-    }
 
 
 }
