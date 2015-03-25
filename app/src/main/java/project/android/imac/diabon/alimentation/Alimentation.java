@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by Brice on 12/03/2015.
  */
 public class Alimentation implements Serializable {
-<<<<<<< HEAD
+
     private String id;
     private String name;
     private Integer weight;
@@ -43,3 +43,5 @@ public class Alimentation implements Serializable {
     public void setGlucide(Float glucide) {
         this.glucide = glucide;
     }
+
+}

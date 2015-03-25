@@ -42,9 +42,7 @@ public class AlimentationFragment extends ListFragment {
         mContext = (AlimentationActivity)getActivity();
 
         LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View header = inflater.inflate(R.layout.alimentation_header, null, false);
         lv = (ListView) getView().findViewById(android.R.id.list);
-        lv.addHeaderView(header);
         title = (TextView) getView().findViewById(R.id.title);
 
         id_food = getActivity().getIntent().getStringExtra("category_id");

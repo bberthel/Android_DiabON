@@ -43,7 +43,7 @@ public class AlimentationArrayAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.alimentation_row_view, null);
             holder = new ViewHolder();
             holder.txtName = (TextView) convertView.findViewById(R.id.name);
-
+            holder.glucide = (TextView) convertView.findViewById(R.id.glucide);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -51,12 +51,14 @@ public class AlimentationArrayAdapter extends BaseAdapter {
 
         // set data
         holder.txtName.setText(alimentationList.get(position).getName());
+        holder.glucide.setText(alimentationList.get(position).getGlucide()+"glucides /"+alimentationList.get(position).getWeight()+" grammes");
 
         return convertView;
     }
 
     static class ViewHolder {
         TextView txtName;
+        TextView glucide;
     }
 
 }

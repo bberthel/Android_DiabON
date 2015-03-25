@@ -30,7 +30,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
     public static String filename = "Logindata";
     SharedPreferences SP;
-    EditText email;
+    EditText user_name;
     EditText mdp;
     CheckBox remember_me;
     Activity context;
@@ -43,7 +43,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.login);
 
         context = this;
-        email = (EditText) findViewById(R.id.user_email);
+        user_name = (EditText) findViewById(R.id.user_name);
         mdp = (EditText) findViewById(R.id.user_password);
         remember_me = (CheckBox) findViewById(R.id.remember_me);
         Button connect = (Button) findViewById(R.id.connect);
@@ -51,7 +51,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         SP = getSharedPreferences(filename, 0);
         String getname = SP.getString("key1","");
         String getpass = SP.getString("key2","");
-        email.setText(getname);
+        user_name.setText(getname);
         mdp.setText(getpass);
     }
 
@@ -59,7 +59,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.connect:
-                String name = email.getText().toString();
+                String name = user_name.getText().toString();
                 String pass = mdp.getText().toString();
                 if (remember_me.isChecked()){
                     SharedPreferences.Editor editit = SP.edit();
@@ -77,7 +77,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     public void check_user(){
         JSONObject userJson = new JSONObject();
         try {
-            userJson.put("email", email.getText().toString());
+            userJson.put("email", user_name.getText().toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -87,8 +87,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             e.printStackTrace();
         }
 
-        TypedInput in = new TypedByteArray("application/json", userJson.toString().getBytes());
-        UserService service = UserAPI.getInstance();
+        /*TypedInput in = new TypedByteArray("application/json", userJson.toString().getBytes());
+        UserService service = UserAPI.getInstance("florent","florent");
         service.login(in, new Callback<Object>() {
             @Override
             public void success(Object user, Response response2) {
@@ -125,30 +125,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             public void failure(RetrofitError error) {
                 error.printStackTrace();
             }
-        });
+        });*/
     }
 }
-
-
-
-
-
-
-
-    /*
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
-
-        final Button loginButton = (Button) findViewById(R.id.connect);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-    }*/

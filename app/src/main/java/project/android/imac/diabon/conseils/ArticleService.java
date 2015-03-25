@@ -1,6 +1,5 @@
 package project.android.imac.diabon.conseils;
 
-import project.android.imac.diabon.alimentation.AlimentationResponse;
 import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Path;
