@@ -1,10 +1,14 @@
 package project.android.imac.diabon.conseils;
 
+import android.util.Base64;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.squareup.okhttp.OkHttpClient;
 
-import project.android.imac.diabon.alimentation.AlimentationService;
+import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
+import retrofit.client.OkClient;
 import retrofit.converter.GsonConverter;
 
 /**
@@ -14,21 +18,38 @@ public class ArticleAPI {
 
     private static ArticleService singleton;
 
-    public static ArticleService getInstance() {
+    public static ArticleService getInstance( String username, String password) {
         if(singleton == null) {
             Gson gson = new GsonBuilder()
                     //.setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
                     .create();
 
-            RestAdapter restAdapter = new RestAdapter.Builder()
+            RestAdapter.Builder builder = new RestAdapter.Builder()
                     .setEndpoint("http://briceberthelot.alwaysdata.net/api")
                     .setConverter(new GsonConverter(gson))
-                    .build();
+                    .setClient(new OkClient(new OkHttpClient()));
 
-            singleton = restAdapter.create(ArticleService.class);
+            if (username != null && password != null) {
+                // concatenate username and password with colon for authentication
+                final String credentials = username + ":" + password;
+
+                builder.setRequestInterceptor(new RequestInterceptor() {
+                    @Override
+                    public void intercept(RequestFacade request) {
+                        // create Base64 encode string
+                        String string = "Basic " + Base64.encodeToString(credentials.getBytes(), Base64.NO_WRAP);
+                        request.addHeader("Accept", "application/json");
+                        request.addHeader("Authorization", string);
+                    }
+                });
+            }
+
+            RestAdapter adapter = builder.build();
+
+
+            singleton = adapter.create(ArticleService.class);
         }
         return singleton;
 
     }
-
 }
