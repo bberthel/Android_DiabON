@@ -36,6 +36,7 @@
     <string name="title_activity_conseils">Conseils</string>
     <string name="title_activity_article">Article</string>
     <string name="title_activity_article_categorie">Catégories des articles</string>
+    <string name="title_activity_detail_article">Détails de l\'article</string>
 
     <!-- Help -->
     <string name="title_activity_help">Aide</string>

@@ -2,11 +2,13 @@ package project.android.imac.diabon;
 
         import android.app.ListFragment;
         import android.content.Context;
+        import android.content.Intent;
         import android.os.Bundle;
         import android.support.annotation.Nullable;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.widget.ListView;
 
         import java.util.List;
 
@@ -66,6 +68,13 @@ public class CategoryArticleFragment extends ListFragment {
     // update the event
     private void updateView (List<Article> article){
         setListAdapter(new CategoryArticleArrayAdapter(mContext, article));
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id){
+        Intent intent = new Intent(mContext,DetailArticleActivity.class);
+        intent.putExtra("id",String.valueOf(position+1));
+        startActivity(intent);
     }
 
 

@@ -45,8 +45,14 @@
             android:label="@string/title_activity_conseils" />
 
         <activity
+            android:name=".DetailArticleActivity"
+            android:label="@string/title_activity_detail_article" />
+
+        <activity
             android:name=".HelpActivity"
             android:label="@string/title_activity_help" />
+
+
 
 
 
