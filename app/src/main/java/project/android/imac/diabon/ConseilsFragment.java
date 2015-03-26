@@ -1,6 +1,7 @@
 package project.android.imac.diabon;
 
 import android.app.Fragment;
+import android.app.ListFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,22 +10,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TextView;
 
-import project.android.imac.diabon.conseils.ActusActivity;
-import project.android.imac.diabon.conseils.AlimentationConseilsActivity;
-import project.android.imac.diabon.conseils.SportActivity;
-import project.android.imac.diabon.conseils.ViePratiqueActivity;
+import java.util.ArrayList;
+import java.util.List;
+
+import project.android.imac.diabon.conseils.Article;
+
 
 /**
- * Created by Brice on 09/03/2015.
+ * Created by Florent on 09/03/2015.
  */
-public class ConseilsFragment extends Fragment {
+public class ConseilsFragment extends ListFragment {
 
+    private TextView title;
+    private Article mArticle;
+    private ListView lv;
+    private String id_article;
     private Context mContext;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.conseils, container, false);
+        return inflater.inflate(R.layout.conseils_fragment, container, false);
     }
 
     @Override
@@ -33,41 +42,29 @@ public class ConseilsFragment extends Fragment {
         // get the application context
         mContext = (ConseilsActivity)getActivity();
 
-        ImageButton goto_conseils_actus = (ImageButton) getView().findViewById(R.id.goto_conseils_actus);
-        goto_conseils_actus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent myIntent = new Intent(getActivity().getApplicationContext(), ActusActivity.class);
-                ConseilsFragment.this.startActivity(myIntent);
-            }
-        });
-
-        ImageButton goto_conseils_sport = (ImageButton) getView().findViewById(R.id.goto_conseils_sport);
-        goto_conseils_sport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent myIntent = new Intent(getActivity().getApplicationContext(), SportActivity.class);
-                ConseilsFragment.this.startActivity(myIntent);
-            }
-        });
-
-        ImageButton goto_conseils_vie_pratique = (ImageButton) getView().findViewById(R.id.goto_conseils_vie_pratique);
-        goto_conseils_vie_pratique.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent myIntent = new Intent(getActivity().getApplicationContext(), ViePratiqueActivity.class);
-                ConseilsFragment.this.startActivity(myIntent);
-            }
-        });
-
-        ImageButton goto_conseils_alimentation = (ImageButton) getView().findViewById(R.id.goto_conseils_alimentation);
-        goto_conseils_alimentation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent myIntent = new Intent(getActivity().getApplicationContext(), AlimentationConseilsActivity.class);
-                ConseilsFragment.this.startActivity(myIntent);
-            }
-        });
+        LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        title = (TextView) getView().findViewById(R.id.title);
+        List<String> list = new ArrayList<String>();
+        list.add("Actualité");
+        list.add("Activités sportives");
+        list.add("Suivi et vie pratique");
+        list.add("Alimentation");
+        setListAdapter(new ConseilsArrayAdapter(mContext, list));
     }
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id){
+        Intent intent = new Intent(mContext,CategoryArticleActivity.class);
+        intent.putExtra("id",String.valueOf(position+1));
+        startActivity(intent);
+    }
+
 
 }

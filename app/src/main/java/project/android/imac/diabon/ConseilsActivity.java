@@ -22,5 +22,5 @@ public class ConseilsActivity extends NavigationDrawer {
             fragmentTransaction.replace(R.id.content_frame,fragment).commit();
         }
     }
-
 }
+
