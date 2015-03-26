@@ -1,5 +1,6 @@
 package project.android.imac.diabon;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.ListFragment;
 import android.content.Context;
@@ -62,7 +63,6 @@ public class AlimentationFragment extends ListFragment{
         list.add("Restauration rapide");
         list.add("Sauces, assaisonnements");
         setListAdapter(new AlimentationArrayAdapter(mContext, list));
-
     }
 
     @Override
@@ -75,9 +75,19 @@ public class AlimentationFragment extends ListFragment{
     public void onListItemClick(ListView l, View v, int position, long id){
         Intent intent = new Intent(mContext,CategoryActivity.class);
         intent.putExtra("id",String.valueOf(position+1));
+        /*if (id == 1) { getActivity().setTitle("Pains, biscottes, céréales, viennoiseries"); }
+        else if (id == 2) { getActivity().setTitle("Féculents et légumes secs"); }
+        else if (id == 3) { getActivity().setTitle("Légumes"); }
+        else if (id == 4) { getActivity().setTitle("Fruits et fruits secs"); }
+        else if (id == 5) { getActivity().setTitle("Produits laitiers"); }
+        else if (id == 6) { getActivity().setTitle("Plats cuisinés"); }
+        else if (id == 7) { getActivity().setTitle("Desserts"); }
+        else if (id == 8) { getActivity().setTitle("Produits sucrés, sucreries"); }
+        else if (id == 9) { getActivity().setTitle("Apéritifs"); }
+        else if (id == 10) { getActivity().setTitle("Boissons"); }
+        else if (id == 11) { getActivity().setTitle("Restauration rapide"); }
+        else if (id == 12) { getActivity().setTitle("Sauces, assaisonnements"); }*/
         startActivity(intent);
     }
-
-
 
 }

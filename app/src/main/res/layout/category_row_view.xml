@@ -3,33 +3,52 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@android:color/transparent"
     android:layout_marginTop="10dp"
-    android:padding="10dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
     android:layout_marginBottom="20dp"
     >
     <RelativeLayout
         android:layout_width="0dp"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
+        android:layout_gravity="center_vertical"
         android:layout_weight="2">
         <TextView android:id="@+id/name"
             android:textSize="18dp"
-            android:textStyle="bold"
+            android:textColor="@color/dark_grey"
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="0dp"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_radius_green"
+        android:layout_gravity="center_vertical"
         android:layout_weight="1">
         <TextView android:id="@+id/glucide"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textColor="@color/green"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
-            android:layout_centerVertical="true"/>
+            android:textColor="@color/white"
+            android:background="@drawable/background_radius_green"
+            android:paddingTop="16dp"
+            android:paddingBottom="0dp"
+            android:text="32.5 glucides"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/grammes"
+            android:text="(pour 100 g)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:paddingTop="0dp"
+            android:paddingBottom="16dp"
+            android:layout_below="@+id/glucide"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
     </RelativeLayout>
 </LinearLayout>

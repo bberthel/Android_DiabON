@@ -3,10 +3,8 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:layout_marginTop="10dp"
-    android:padding="10dp"
-    android:layout_marginBottom="20dp"
+    android:background="@color/green"
+    android:padding="16dp"
     >
     <RelativeLayout
         android:layout_width="0dp"
@@ -14,9 +12,16 @@
         android:layout_marginRight="10dp"
         android:layout_weight="2">
         <TextView android:id="@+id/name"
-            android:textSize="18dp"
-            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:paddingLeft="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_next_item"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
     </RelativeLayout>
 </LinearLayout>

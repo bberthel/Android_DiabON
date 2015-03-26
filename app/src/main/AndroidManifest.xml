@@ -59,18 +59,7 @@
 
         <activity
             android:name=".CategoryActivity"
-            android:label="Catalogue" />
-
-        <activity
-            android:name=".CategoryDetailsActivity"
-            android:label="Catalogue"
-            android:icon="@drawable/ic_action_back"
-            android:parentActivityName=".CategoryActivity" >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".CategoryActivity" />
-        </activity>
+            android:label="Catégorie choisie" />
 
 
     </application>

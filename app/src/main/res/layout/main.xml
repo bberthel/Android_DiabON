@@ -15,7 +15,7 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/green"
+            android:background="@drawable/background_radius_green"
             android:padding="16dp"
             android:layout_marginBottom="16dp">
 
@@ -24,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageTitleAlimentation"
                 android:src="@drawable/title_alimentation"
+                android:layout_marginTop="8dp"
                 android:layout_alignParentTop="true"/>
 
             <RelativeLayout
@@ -48,9 +49,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:text="découvrir"
-                    android:textAlignment="gravity"
-                    android:gravity="center"
-                    android:background="@drawable/rounded_corner_background"
+                    android:textAlignment="center"
+                    android:background="@drawable/background_radius_white"
                     android:textColor="@color/dark_grey"
                     style="@style/ActionButton.CloseMode.Diabon"
                     android:layout_alignParentBottom="true"
@@ -62,7 +62,7 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@drawable/background_radius_orange"
             android:padding="16dp">
 
             <ImageView
@@ -70,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageTitleConseils"
                 android:src="@drawable/title_conseils"
+                android:layout_marginTop="8dp"
                 android:layout_alignParentTop="true"/>
 
             <RelativeLayout
@@ -96,7 +97,7 @@
                     android:text="lire"
                     android:textAlignment="gravity"
                     android:gravity="center"
-                    android:background="@drawable/rounded_corner_background"
+                    android:background="@drawable/background_radius_white"
                     android:textColor="@color/dark_grey"
                     style="@style/ActionButton.CloseMode.Diabon"
                     android:layout_alignParentBottom="true"

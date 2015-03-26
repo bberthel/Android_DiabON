@@ -36,7 +36,6 @@ public class CategoryFragment extends ListFragment {
         // get the application context
         mContext = (CategoryActivity)getActivity();
         id_cat= getActivity().getIntent().getStringExtra("id");
-
     }
 
     @Override

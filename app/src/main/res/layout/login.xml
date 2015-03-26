@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:layout_gravity="center"
-            android:background="@drawable/rounded_corner_background"
+            android:background="@drawable/background_radius_white"
             android:padding="10dp"
             android:layout_marginTop="@dimen/edit_text_margin_top"
             android:hint="Pseudo" />
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:inputType="textPassword"
-            android:background="@drawable/rounded_corner_background"
+            android:background="@drawable/background_radius_white"
             android:padding="10dp"
             android:layout_marginTop="@dimen/edit_text_margin_top"
             android:hint="Mot de passe"/>
