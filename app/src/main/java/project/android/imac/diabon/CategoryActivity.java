@@ -24,6 +24,7 @@ public class CategoryActivity extends NavigationDrawer {
 
         if ( savedInstanceState == null ) {
              String id = getIntent().getStringExtra("id");
+            System.out.println("id "+id);
             //create main fragment : homepage of an event
             Fragment fragment = new CategoryFragment();
             FragmentManager fragmentManager = getFragmentManager();

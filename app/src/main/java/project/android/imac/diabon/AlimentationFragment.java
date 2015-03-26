@@ -9,9 +9,11 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import project.android.imac.diabon.alimentation.Alimentation;
@@ -24,7 +26,7 @@ import retrofit.client.Response;
 /**
  * Created by Brice on 09/03/2015.
  */
-public class AlimentationFragment extends Fragment implements View.OnClickListener{
+public class AlimentationFragment extends ListFragment{
 
     private TextView title;
     private Alimentation mAlimentation;
@@ -45,11 +47,22 @@ public class AlimentationFragment extends Fragment implements View.OnClickListen
         mContext = (AlimentationActivity)getActivity();
 
         LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        lv = (ListView) getView().findViewById(android.R.id.list);
         title = (TextView) getView().findViewById(R.id.title);
+        List<String> list = new ArrayList<String>();
+        list.add("Pains, biscottes, céréales, viennoiseries");
+        list.add("Féculents et légumes secs");
+        list.add("Légumes");
+        list.add("Fruits et fruits secs");
+        list.add("Produits laitiers");
+        list.add("Plats cuisinés");
+        list.add("Desserts");
+        list.add("Produits sucrés, sucreries");
+        list.add("Apéritifs");
+        list.add("Boissons");
+        list.add("Restauration rapide");
+        list.add("Sauces, assaisonnements");
+        setListAdapter(new AlimentationArrayAdapter(mContext, list));
 
-        id_food = getActivity().getIntent().getStringExtra("category_id");
-        System.out.println(id_food);
     }
 
     @Override
@@ -59,10 +72,9 @@ public class AlimentationFragment extends Fragment implements View.OnClickListen
     }
 
     @Override
-    public void onClick(View v){
-        String id = String.valueOf(v.getId()).substring(2, v.getId());
+    public void onListItemClick(ListView l, View v, int position, long id){
         Intent intent = new Intent(mContext,CategoryActivity.class);
-        intent.putExtra("id",id);
+        intent.putExtra("id",String.valueOf(position+1));
         startActivity(intent);
     }
 

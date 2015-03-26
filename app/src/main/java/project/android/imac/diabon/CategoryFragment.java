@@ -1,6 +1,5 @@
 package project.android.imac.diabon;
 
-import android.app.Fragment;
 import android.app.ListFragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -8,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.List;
 
@@ -38,6 +36,7 @@ public class CategoryFragment extends ListFragment {
         // get the application context
         mContext = (CategoryActivity)getActivity();
         id_cat= getActivity().getIntent().getStringExtra("id");
+
     }
 
     @Override
@@ -67,7 +66,7 @@ public class CategoryFragment extends ListFragment {
 
     // update the event
     private void updateView (List<Alimentation> food){
-        setListAdapter(new AlimentationArrayAdapter(mContext, food));
+        setListAdapter(new CategoryArrayAdapter(mContext, food));
     }
 
 }
