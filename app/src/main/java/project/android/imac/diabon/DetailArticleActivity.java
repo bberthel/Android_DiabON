@@ -1,30 +1,25 @@
 package project.android.imac.diabon;
 
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
-
 /**
- * Created by Brice on 13/03/2015.
+ * Created by Brice on 09/03/2015.
  */
-public class CategoryActivity extends NavigationDrawer {
+public class DetailArticleActivity extends NavigationDrawer {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         if ( savedInstanceState == null ) {
-            String id = getIntent().getStringExtra("id");
-            System.out.println("id "+id);
-
             //create main_fragment fragment : homepage of an event
-            Fragment fragment = new CategoryFragment();
+            Fragment fragment = new DetailArticleFragment();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.content_frame,fragment).commit();
         }
     }
-
 }

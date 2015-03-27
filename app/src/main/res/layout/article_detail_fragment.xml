@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:id="@+id/title_article"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="@dimen/text_margin_top"
+            android:text="titre de l'article"
+            android:textSize="@dimen/big_text_size"
+            android:textColor="@color/dark_grey"/>
+
+        <TextView
+            android:id="@+id/author_article"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="de Molière"/>
+
+        <TextView
+            android:id="@+id/date_article"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12/02/2015"/>
+
+        <TextView
+            android:id="@+id/content_article"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#ffffff"/>
+
+</android.support.v4.widget.DrawerLayout>
