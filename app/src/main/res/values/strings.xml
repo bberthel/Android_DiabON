@@ -25,20 +25,29 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
+    <!-- Action bar -->
+    <string name="action_bar_help">Aide</string>
+
     <!-- Alimentation -->
     <string name="title_activity_alimentation">Catalogue</string>
     <string name="title_activity_categorie">Aliments de la catégorie</string>
+    <string name="alimentation_feature">Grâce à cette fonctionnalité, accédez à toutes les
+        catégories d\'aliment qu\'offre DiabON et ainsi, en sélectionnant la catégorie voulue,
+        vous accédez à la liste complète de tous les aliments de la catégorie choisie. Vous pourrez
+        trouver en un clin d\'oeil la quantité de glucides dans un aliment pour une portion
+        de 100g.</string>
 
     <!-- Conseils -->
     <string name="title_activity_conseils">Articles</string>
     <string name="title_activity_article">Article</string>
-<<<<<<< HEAD
     <string name="title_activity_article_categorie">Articles de la catégorie</string>
     <string name="conseils_description">Choisissez le thème qui vous intéresse :</string>
-=======
-    <string name="title_activity_article_categorie">Catégories des articles</string>
     <string name="title_activity_detail_article">Détails de l\'article</string>
->>>>>>> b5b45a33cdb0d837c8853d2207b10b45189653c5
+    <string name="conseils_feature">En accédant aux articles vous y trouverez une liste de thème
+        qui permettent de trier nos articles suivant des thèmatiques intéressantes pour les diabètique.
+        Il vous suffit d\'appuyer sur la catégorie voulue pour avoir la liste des articles de ce
+        thème. En cliquant sur l\'article vous pourrez enfin jouir de son contenu ainsi que de son
+        auteur.</string>
 
     <!-- Help -->
     <string name="title_activity_help">Aide</string>
