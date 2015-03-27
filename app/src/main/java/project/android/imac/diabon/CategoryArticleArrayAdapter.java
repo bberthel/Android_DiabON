@@ -40,7 +40,7 @@ public class CategoryArticleArrayAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.category_article_row_view, null);
+            convertView = mInflater.inflate(R.layout.article_category_row_view, null);
             holder = new ViewHolder();
             holder.txtTitle = (TextView) convertView.findViewById(R.id.title);
             holder.date = (TextView) convertView.findViewById(R.id.date);

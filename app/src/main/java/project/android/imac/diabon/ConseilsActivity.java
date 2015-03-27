@@ -15,7 +15,7 @@ public class ConseilsActivity extends NavigationDrawer {
         super.onCreate(savedInstanceState);
 
         if ( savedInstanceState == null ) {
-            //create main fragment : homepage of an event
+            //create main_fragment fragment : homepage of an event
             Fragment fragment = new ConseilsFragment();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

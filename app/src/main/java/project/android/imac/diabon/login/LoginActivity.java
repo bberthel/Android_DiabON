@@ -1,7 +1,6 @@
 package project.android.imac.diabon.login;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -10,18 +9,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import project.android.imac.diabon.MainActivity;
 import project.android.imac.diabon.R;
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
-import retrofit.mime.TypedByteArray;
-import retrofit.mime.TypedInput;
 
 /**
  * Created by Brice on 09/03/2015.
@@ -40,7 +32,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.login);
+        setContentView(R.layout.login_fragment);
 
         context = this;
         user_name = (EditText) findViewById(R.id.user_name);
@@ -89,7 +81,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
         /*TypedInput in = new TypedByteArray("application/json", userJson.toString().getBytes());
         UserService service = UserAPI.getInstance("florent","florent");
-        service.login(in, new Callback<Object>() {
+        service.login_fragment(in, new Callback<Object>() {
             @Override
             public void success(Object user, Response response2) {
                 JSONObject jsonObject = null;

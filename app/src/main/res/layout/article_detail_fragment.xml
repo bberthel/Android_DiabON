@@ -5,11 +5,17 @@
     android:layout_height="match_parent"
     android:background="@color/background">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:layout_margin="@dimen/activity_margin">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
 
         <TextView
             android:id="@+id/title_article"
@@ -24,12 +30,14 @@
         <TextView
             android:id="@+id/author_article"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="de Molière"/>
 
         <TextView
             android:id="@+id/date_article"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="12/02/2015"/>
 
         <TextView
             android:id="@+id/content_article"
@@ -37,7 +45,7 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
+</ScrollView>
     <ListView
         android:id="@+id/left_drawer"
         android:layout_width="240dp"

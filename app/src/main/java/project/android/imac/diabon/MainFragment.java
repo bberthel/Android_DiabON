@@ -19,7 +19,7 @@ public class MainFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.main, container, false);
+        return inflater.inflate(R.layout.main_fragment, container, false);
     }
 
     @Override

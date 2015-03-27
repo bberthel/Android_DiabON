@@ -29,7 +29,7 @@ public class CategoryArticleFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.category_article, container, false);
+        return inflater.inflate(R.layout.article_category, container, false);
     }
 
     @Override
@@ -72,8 +72,18 @@ public class CategoryArticleFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
+
+        // get the selected article
+        Article SelectedArticle = (Article)getListView().getItemAtPosition(position);
+
+        // create an intent
         Intent intent = new Intent(mContext,DetailArticleActivity.class);
-        intent.putExtra("id",String.valueOf(position+1));
+        intent.putExtra("title",SelectedArticle.getTitle());
+        intent.putExtra("author",SelectedArticle.getAuthor());
+        intent.putExtra("content",SelectedArticle.getContent());
+        intent.putExtra("date",SelectedArticle.getDate());
+
+        //send intent
         startActivity(intent);
     }
 
