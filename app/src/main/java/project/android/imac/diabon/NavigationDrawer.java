@@ -19,6 +19,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import project.android.imac.diabon.login.LoginActivity;
+
 public class NavigationDrawer extends ActionBarActivity {
 
     private String[] mDrawerListViewItems;
@@ -83,6 +85,10 @@ public class NavigationDrawer extends ActionBarActivity {
                     case 2:
                         Intent intent4= new Intent(NavigationDrawer.this, HelpActivity.class);
                         startActivity(intent4);
+                        break;
+                    case 3:
+                        Intent intent5= new Intent(NavigationDrawer.this, LoginActivity.class);
+                        startActivity(intent5);
                         break;
                 }
             }

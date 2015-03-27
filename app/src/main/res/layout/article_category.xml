@@ -8,7 +8,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@color/green"
+        android:divider="@color/orange"
         android:dividerHeight="1dp"
         android:backgroundTint="@android:color/transparent"
         android:paddingBottom="8dp"

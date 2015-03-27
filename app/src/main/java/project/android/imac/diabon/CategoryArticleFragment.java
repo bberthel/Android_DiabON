@@ -27,7 +27,7 @@ public class CategoryArticleFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.category_article, container, false);
+        return inflater.inflate(R.layout.article_category, container, false);
     }
 
     @Override

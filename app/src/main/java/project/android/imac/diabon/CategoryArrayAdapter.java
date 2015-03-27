@@ -40,7 +40,7 @@ public class CategoryArrayAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.category_row_view, null);
+            convertView = mInflater.inflate(R.layout.alimentation_category_row_view, null);
             holder = new ViewHolder();
             holder.txtName = (TextView) convertView.findViewById(R.id.name);
             holder.glucide = (TextView) convertView.findViewById(R.id.glucide);

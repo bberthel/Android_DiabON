@@ -20,22 +20,20 @@
         <item>Alimentation</item>
         <item>Conseils</item>
         <item>Aide</item>
+        <item>Connexion</item>
     </string-array>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
-    <!-- Category -->
-    <string name="title_activity_categorie">Catégories des aliments</string>
-    <string name="category_title">Catégories des aliments</string>
-
     <!-- Alimentation -->
-    <string name="title_activity_alimentation">Alimentation</string>
-    <string name="alimentation_title">Catalogue</string>
+    <string name="title_activity_alimentation">Catalogue</string>
+    <string name="title_activity_categorie">Aliments de la catégorie</string>
 
     <!-- Conseils -->
-    <string name="title_activity_conseils">Conseils</string>
+    <string name="title_activity_conseils">Articles</string>
     <string name="title_activity_article">Article</string>
-    <string name="title_activity_article_categorie">Catégories des articles</string>
+    <string name="title_activity_article_categorie">Articles de la catégorie</string>
+    <string name="conseils_description">Choisissez le thème qui vous intéresse :</string>
 
     <!-- Help -->
     <string name="title_activity_help">Aide</string>
