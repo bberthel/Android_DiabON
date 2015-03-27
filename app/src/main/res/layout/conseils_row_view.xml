@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/orange"
+    android:background="@drawable/background_radius_orange"
     android:padding="16dp"
     >
     <RelativeLayout

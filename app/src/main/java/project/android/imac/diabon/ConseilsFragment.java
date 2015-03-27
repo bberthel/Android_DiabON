@@ -10,13 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import project.android.imac.diabon.conseils.Article;
-
-
 
 /**
  * Created by Florent on 09/03/2015.
@@ -24,11 +20,7 @@ import project.android.imac.diabon.conseils.Article;
 public class ConseilsFragment extends ListFragment {
 
     private TextView title;
-    private Article mArticle;
-    private ListView lv;
-    private String id_article;
     private Context mContext;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,7 +43,6 @@ public class ConseilsFragment extends ListFragment {
         setListAdapter(new ConseilsArrayAdapter(mContext, list));
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,10 +51,9 @@ public class ConseilsFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
-        Intent intent = new Intent(mContext,CategoryArticleActivity.class);
+        Intent intent = new Intent(mContext,ArticleCategoryActivity.class);
         intent.putExtra("id",String.valueOf(position+1));
         startActivity(intent);
     }
-
 
 }

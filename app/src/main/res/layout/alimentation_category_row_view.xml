@@ -12,7 +12,6 @@
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
         android:layout_gravity="center_vertical"
         android:layout_weight="2">
         <TextView android:id="@+id/name"
@@ -25,30 +24,26 @@
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_radius_green"
         android:layout_gravity="center_vertical"
         android:layout_weight="1">
         <TextView android:id="@+id/glucide"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textColor="@color/white"
-            android:background="@drawable/background_radius_green"
+            android:textColor="@color/green"
             android:paddingTop="16dp"
             android:paddingBottom="0dp"
             android:text="32.5 glucides"
             android:layout_alignParentTop="true"
-            android:layout_centerVertical="true"
-            android:gravity="center_horizontal"/>
+            android:gravity="right"/>
         <TextView android:id="@+id/grammes"
             android:text="(pour 100 g)"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/green"
             android:paddingTop="0dp"
             android:paddingBottom="16dp"
             android:layout_below="@+id/glucide"
-            android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal"/>
+            android:layout_alignParentRight="true"/>
     </RelativeLayout>
 </LinearLayout>

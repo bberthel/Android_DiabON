@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import java.util.List;
 
 /**
@@ -15,7 +14,6 @@ import java.util.List;
 public class AlimentationArrayAdapter extends BaseAdapter {
 
     private static List<String> categories;
-
     private LayoutInflater mInflater;
 
     public AlimentationArrayAdapter(Context context, List<String> listcategories) {
@@ -37,6 +35,7 @@ public class AlimentationArrayAdapter extends BaseAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
+
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.alimentation_row_view, null);
             holder = new ViewHolder();

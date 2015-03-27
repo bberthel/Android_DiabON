@@ -32,8 +32,8 @@ public class MainFragment extends Fragment {
         goto_alimentation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent myIntent = new Intent(getActivity().getApplicationContext(), AlimentationActivity.class);
-                MainFragment.this.startActivity(myIntent);
+            Intent myIntent = new Intent(getActivity().getApplicationContext(), AlimentationActivity.class);
+            MainFragment.this.startActivity(myIntent);
             }
         });
 
@@ -41,10 +41,10 @@ public class MainFragment extends Fragment {
         goto_conseils.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent myIntent = new Intent(getActivity().getApplicationContext(), ConseilsActivity.class);
-                MainFragment.this.startActivity(myIntent);
+            Intent myIntent = new Intent(getActivity().getApplicationContext(), ConseilsActivity.class);
+            MainFragment.this.startActivity(myIntent);
             }
         });
-
     }
+
 }

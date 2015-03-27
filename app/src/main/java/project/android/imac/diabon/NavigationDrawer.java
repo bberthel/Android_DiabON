@@ -15,9 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
-import project.android.imac.diabon.login.LoginActivity;
-
 public class NavigationDrawer extends ActionBarActivity {
 
     private String[] mDrawerListViewItems;
@@ -27,7 +24,6 @@ public class NavigationDrawer extends ActionBarActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
     private Activity mActivity;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +42,6 @@ public class NavigationDrawer extends ActionBarActivity {
     }
 
     private void addDrawerItems() {
-
         // get list items from strings.xml
         mDrawerListViewItems = getResources().getStringArray(R.array.items);
 
@@ -70,31 +65,30 @@ public class NavigationDrawer extends ActionBarActivity {
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position){
-                    case 0:
-                        Intent intent2= new Intent(NavigationDrawer.this, AlimentationActivity.class);
-                        startActivity(intent2);
-                        break;
-                    case 1:
-                        Intent intent3= new Intent(NavigationDrawer.this, ConseilsActivity.class);
-                        startActivity(intent3);
-                        break;
-                    case 2:
-                        Intent intent4= new Intent(NavigationDrawer.this, HelpActivity.class);
-                        startActivity(intent4);
-                        break;
-                    case 3:
-                        Intent intent5= new Intent(NavigationDrawer.this, LoginActivity.class);
-                        startActivity(intent5);
-                        break;
-                }
+            switch (position){
+                case 0:
+                    Intent intent2= new Intent(NavigationDrawer.this, AlimentationActivity.class);
+                    startActivity(intent2);
+                    break;
+                case 1:
+                    Intent intent3= new Intent(NavigationDrawer.this, ConseilsActivity.class);
+                    startActivity(intent3);
+                    break;
+                case 2:
+                    Intent intent4= new Intent(NavigationDrawer.this, Help.class);
+                    startActivity(intent4);
+                    break;
+                case 3:
+                    Intent intent5= new Intent(NavigationDrawer.this, Login.class);
+                    startActivity(intent5);
+                    break;
+            }
             }
         });
     }
 
     private void setupDrawer() {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close) {
-
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -107,13 +101,11 @@ public class NavigationDrawer extends ActionBarActivity {
                 getSupportActionBar().setTitle(mActivityTitle);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
-
         };
 
         mDrawerToggle.setDrawerIndicatorEnabled(true);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
-
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -131,13 +123,12 @@ public class NavigationDrawer extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        // getMenuInflater().inflate(R.menu.global, menu);
-        return false;
+        getMenuInflater().inflate(R.menu.global, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
 
         if (mDrawerToggle.onOptionsItemSelected(item)) {
@@ -146,4 +137,5 @@ public class NavigationDrawer extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

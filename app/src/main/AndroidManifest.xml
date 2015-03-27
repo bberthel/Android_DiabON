@@ -10,52 +10,56 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Diabon" >
 
-        <activity
-            android:name=".login.LoginActivity"
-            android:label="@string/app_name" >
-        </activity>
 
+        <!-- __________________ AIDE __________________ -->
+        <activity android:name=".Help"
+            android:label="@string/title_activity_help"
+            android:configChanges="screenSize|keyboardHidden" />
+
+
+        <!-- __________________ CONNEXION __________________ -->
+        <activity
+            android:name=".Login"
+            android:label="@string/app_name" />
+
+
+        <!-- __________________ NAVIGATION DRAWER __________________ -->
         <activity android:name=".NavigationDrawer" />
 
+
+        <!-- __________________ PAGE D'ACCUEIL __________________ -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+
+        <!-- __________________ ALIMENTATION __________________ -->
         <activity
             android:name=".AlimentationActivity"
-            android:label="@string/title_activity_alimentation" >
-        </activity>
+            android:label="@string/title_activity_alimentation" />
 
         <activity
-            android:name=".CategoryActivity"
+            android:name=".AlimentationCategoryActivity"
             android:label="@string/title_activity_categorie" />
 
-        <activity
-            android:name=".CategoryArticleActivity"
-            android:label="@string/title_activity_article_categorie" />
 
+        <!-- __________________ CONSEILS __________________ -->
         <activity
             android:name=".ConseilsActivity"
             android:label="@string/title_activity_conseils" />
 
         <activity
-            android:name=".DetailArticleActivity"
-            android:label="@string/title_activity_detail_article" />
+            android:name=".ArticleCategoryActivity"
+            android:label="@string/title_activity_article_categorie" />
 
         <activity
-            android:name=".HelpActivity"
-            android:label="@string/title_activity_help" />
-
-
-
-
-
+            android:name=".ArticleDetailActivity"
+            android:label="@string/title_activity_detail_article" />
 
     </application>
 

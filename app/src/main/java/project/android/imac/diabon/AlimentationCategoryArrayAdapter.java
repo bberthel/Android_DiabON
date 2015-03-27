@@ -6,31 +6,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import java.util.List;
 
-import project.android.imac.diabon.conseils.Article;
+import project.android.imac.diabon.alimentation.Alimentation;
 
 /**
- * Created by Florent on 26/03/2015.
+ * Created by Brice on 12/03/2015.
  */
-public class CategoryArticleArrayAdapter extends BaseAdapter{
+public class AlimentationCategoryArrayAdapter extends BaseAdapter {
 
-    private static List<Article> articleList;
+    private static List<Alimentation> alimentationList;
 
     private LayoutInflater mInflater;
 
-    public CategoryArticleArrayAdapter(Context context, List<Article> results) {
-        articleList = results;
+    public AlimentationCategoryArrayAdapter(Context context, List<Alimentation> results) {
+        alimentationList = results;
         mInflater = LayoutInflater.from(context);
     }
 
     public int getCount() {
-        return articleList.size();
+        return alimentationList.size();
     }
 
     public Object getItem(int position) {
-        return articleList.get(position);
+        return alimentationList.get(position);
     }
 
     public long getItemId(int position) {
@@ -40,28 +39,25 @@ public class CategoryArticleArrayAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.article_category_row_view, null);
+            convertView = mInflater.inflate(R.layout.alimentation_category_row_view, null);
             holder = new ViewHolder();
-            holder.txtTitle = (TextView) convertView.findViewById(R.id.title);
-            holder.date = (TextView) convertView.findViewById(R.id.date);
+            holder.txtName = (TextView) convertView.findViewById(R.id.name);
+            holder.glucide = (TextView) convertView.findViewById(R.id.glucide);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         // set data
-        holder.txtTitle.setText(articleList.get(position).getTitle());
-        holder.date.setText(articleList.get(position).getDate());
+        holder.txtName.setText(alimentationList.get(position).getName());
+        holder.glucide.setText(alimentationList.get(position).getGlucide()+" glucides");
 
         return convertView;
     }
 
     static class ViewHolder {
-        TextView txtTitle;
-        TextView date;
+        TextView txtName;
+        TextView glucide;
     }
 
 }
-
-
-

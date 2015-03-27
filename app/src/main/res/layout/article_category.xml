@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:divider="@color/orange"
         android:dividerHeight="1dp"
-        android:backgroundTint="@android:color/transparent"
         android:paddingBottom="8dp"
         android:paddingTop="16dp"
         android:paddingLeft="16dp"

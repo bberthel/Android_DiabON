@@ -13,32 +13,47 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:orientation="vertical">
 
-
-
-        <TextView
-            android:id="@+id/title_article"
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="@dimen/text_margin_top"
-            android:text="titre de l'article"
-            android:textSize="@dimen/big_text_size"
-            android:textColor="@color/dark_grey"/>
+            android:background="@drawable/background_radius_orange"
+            android:id="@+id/header_article"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/author_article"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="de Molière"/>
+            <TextView
+                android:id="@+id/title_article"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_alignParentTop="true"
+                android:text="titre de l'article"
+                android:textSize="@dimen/big_text_size"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/white"/>
 
-        <TextView
-            android:id="@+id/date_article"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="12/02/2015"/>
+            <TextView
+                android:id="@+id/author_article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_article"
+                android:gravity="center_horizontal"
+                android:textColor="@color/orange_dark"
+                android:text="de Molière"/>
 
+            <!--<TextView
+                android:id="@+id/date_article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/author_article"
+                android:gravity="center_horizontal"
+                android:textColor="@color/orange_dark"
+                android:text="12/02/2015"/>-->
+
+        </RelativeLayout>
         <TextView
             android:id="@+id/content_article"
             android:layout_width="match_parent"

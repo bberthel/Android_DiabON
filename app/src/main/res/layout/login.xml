@@ -61,7 +61,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/blue"
+            android:background="@drawable/background_radius_blue"
             android:layout_marginTop="@dimen/normal_padding"
             android:text="@string/connect"
             android:textColor="@color/white" />
@@ -70,7 +70,7 @@
             android:id="@+id/create_account"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/dark_grey"
+            android:background="@drawable/background_radius_darkgrey"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="@string/create_account"

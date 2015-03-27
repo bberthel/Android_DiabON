@@ -15,7 +15,7 @@ public class AlimentationActivity extends NavigationDrawer {
         super.onCreate(savedInstanceState);
 
         if ( savedInstanceState == null ) {
-            //create main_fragment fragment : homepage of an event
+            //create main_fragment fragment : homepage d'Alimentation
             Fragment fragment = new AlimentationFragment();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

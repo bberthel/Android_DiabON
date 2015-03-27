@@ -1,4 +1,4 @@
-package project.android.imac.diabon.login;
+package project.android.imac.diabon;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -9,16 +9,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import project.android.imac.diabon.R;
 
 /**
  * Created by Brice on 09/03/2015.
  */
-public class LoginActivity extends Activity implements View.OnClickListener {
+public class Login extends Activity implements View.OnClickListener {
 
     public static String filename = "Logindata";
     SharedPreferences SP;
@@ -32,7 +29,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.login_fragment);
+        setContentView(R.layout.login);
 
         context = this;
         user_name = (EditText) findViewById(R.id.user_name);
@@ -60,10 +57,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     editit.commit();
                 }
                 check_user();
-
                 break;
         }
-
     }
 
     public void check_user(){
@@ -81,7 +76,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
         /*TypedInput in = new TypedByteArray("application/json", userJson.toString().getBytes());
         UserService service = UserAPI.getInstance("florent","florent");
-        service.login_fragment(in, new Callback<Object>() {
+        service.login(in, new Callback<Object>() {
             @Override
             public void success(Object user, Response response2) {
                 JSONObject jsonObject = null;
@@ -105,10 +100,10 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     intent.putExtra("user_id", id);
                     startActivity(intent);
                 } else if (error.equals("Wrong password")) {
-                    Toast.makeText(LoginActivity.this, R.string.error_mdp, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, R.string.error_mdp, Toast.LENGTH_SHORT).show();
                     return;
                 } else if (error.equals("User not found")) {
-                    Toast.makeText(LoginActivity.this, R.string.error_username, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, R.string.error_username, Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
@@ -119,4 +114,5 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             }
         });*/
     }
+
 }

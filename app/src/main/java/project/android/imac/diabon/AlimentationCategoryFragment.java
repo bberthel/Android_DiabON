@@ -7,9 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import java.util.List;
-
 import project.android.imac.diabon.alimentation.Alimentation;
 import project.android.imac.diabon.alimentation.AlimentationAPI;
 import project.android.imac.diabon.alimentation.AlimentationService;
@@ -20,7 +18,7 @@ import retrofit.client.Response;
 /**
  * Created by Brice on 13/03/2015.
  */
-public class CategoryFragment extends ListFragment {
+public class AlimentationCategoryFragment extends ListFragment {
 
     private Context mContext;
     private String id_cat;
@@ -34,7 +32,7 @@ public class CategoryFragment extends ListFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         // get the application context
-        mContext = (CategoryActivity)getActivity();
+        mContext = (AlimentationCategoryActivity)getActivity();
         id_cat= getActivity().getIntent().getStringExtra("id");
     }
 
@@ -65,7 +63,7 @@ public class CategoryFragment extends ListFragment {
 
     // update the event
     private void updateView (List<Alimentation> food){
-        setListAdapter(new CategoryArrayAdapter(mContext, food));
+        setListAdapter(new AlimentationCategoryArrayAdapter(mContext, food));
     }
 
 }

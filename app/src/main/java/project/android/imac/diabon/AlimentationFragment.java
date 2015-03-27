@@ -1,6 +1,5 @@
 package project.android.imac.diabon;
 
-
 import android.app.ListFragment;
 import android.content.Context;
 import android.content.Intent;
@@ -66,7 +65,7 @@ public class AlimentationFragment extends ListFragment{
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
-        Intent intent = new Intent(mContext,CategoryActivity.class);
+        Intent intent = new Intent(mContext,AlimentationCategoryActivity.class);
         intent.putExtra("id",String.valueOf(position+1));
         startActivity(intent);
     }
